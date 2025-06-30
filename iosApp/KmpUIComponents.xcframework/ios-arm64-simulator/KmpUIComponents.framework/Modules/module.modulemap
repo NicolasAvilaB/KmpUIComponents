@@ -1,0 +1,8 @@
+framework module "KmpUIComponents" {
+    umbrella header "KmpUIComponents.h"
+
+    export *
+    module * { export * }
+
+    use Foundation
+}

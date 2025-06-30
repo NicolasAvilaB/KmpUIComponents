@@ -30,9 +30,21 @@ kotlin {
 
     sourceSets {
         androidMain.dependencies {
+            implementation(compose.preview)
+            implementation(compose.material3)
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.ui)
+            implementation(libs.androidx.activity.compose)
         }
 
         commonMain.dependencies {
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.ui)
+            implementation(compose.components.resources)
+            implementation(compose.components.uiToolingPreview)
+            implementation(compose.material3)
         }
 
         iosMain.dependencies {
@@ -41,7 +53,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.kmp.ui.components"
+    namespace = "com.kmp.ui.shared.components"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -57,4 +69,36 @@ android {
             isMinifyEnabled = false
         }
     }
+}
+dependencies {
+    debugImplementation(libs.androidx.ui.tooling)
+}
+
+tasks.register("assembleDebugXCFramework") {
+    dependsOn(
+        "linkDebugFrameworkIosX64",
+        "linkDebugFrameworkIosArm64",
+        "linkDebugFrameworkIosSimulatorArm64"
+    )
+}
+
+tasks.register<Exec>("createUnifiedXCFramework") {
+    dependsOn("assembleDebugXCFramework")
+    val baseName = "KmpUIComponents"
+    val outputDir = file("$buildDir/XCFrameworks")
+
+    doFirst {
+        if (outputDir.exists()) {
+            outputDir.deleteRecursively()
+        }
+        outputDir.mkdirs()
+    }
+
+    commandLine(
+        "xcodebuild", "-create-xcframework",
+        //"-framework", "$buildDir/bin/iosX64/debugFramework/$baseName.framework",
+        "-framework", "$buildDir/bin/iosArm64/debugFramework/$baseName.framework",
+        "-framework", "$buildDir/bin/iosSimulatorArm64/debugFramework/$baseName.framework",
+        "-output", "$outputDir/$baseName.xcframework"
+    )
 }

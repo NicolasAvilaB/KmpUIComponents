@@ -15,7 +15,7 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -53,6 +53,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            implementation(project(":shared"))
 
             implementation(libs.coil3)
             implementation(libs.coil3.network.ktor)
@@ -100,4 +102,3 @@ android {
 dependencies {
     debugImplementation(compose.uiTooling)
 }
-
