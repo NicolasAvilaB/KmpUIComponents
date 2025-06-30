@@ -17,7 +17,7 @@ fun NavController(){
         initialRoute = startDestination
     ) {
         scene(
-            route = NavRoutes.ListElementsScreen.route,
+            route = startDestination,
             content = {
                 ListElementsScreen()
             }

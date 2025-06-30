@@ -10,6 +10,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -23,6 +24,7 @@ fun ListElementsScreen(){
                     Text(
                         text = "Recuperar Clave",
                         fontSize = 20.sp,
+                        fontWeight = FontWeight.W500,
                         color = Color.Black
                     )
                 },
