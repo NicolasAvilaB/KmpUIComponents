@@ -11,14 +11,21 @@ androidx-espresso = "3.6.1"
 androidx-lifecycle = "2.9.1"
 androidx-testExt = "1.2.1"
 composeMultiplatform = "1.7.3"
+coil3Version = "3.0.1"
+coil3NetworkVersion = "3.0.0-alpha06"
+koinBomVersion = "4.0.0"
 junit = "4.13.2"
 moePrecomposeVersion = "1.6.2"
+ktor = "2.3.12"
 kotlin = "2.2.0"
 
 [libraries]
+coil3 = { group = "io.coil-kt.coil3", name= "coil-compose", version.ref = "coil3Version" }
+coil3-network-ktor = { group = "io.coil-kt.coil3", name= "coil-network-ktor", version.ref = "coil3NetworkVersion" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { module = "junit:junit", version.ref = "junit" }
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koinBomVersion" }
 moe-precompose = { module = "moe.tlaster:precompose", version.ref = "moePrecomposeVersion" }
 moe-precompose-molecule = { module = "moe.tlaster:precompose-molecule", version.ref = "moePrecomposeVersion" }
 moe-precompose-viewmodel = { module = "moe.tlaster:precompose-viewmodel", version.ref = "moePrecomposeVersion" }
@@ -31,6 +38,12 @@ androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayo
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

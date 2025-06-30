@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -32,6 +31,10 @@ kotlin {
         
         androidMain.dependencies {
             implementation(compose.preview)
+            implementation(libs.ktor.client.okhttp)
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation("io.insert-koin:koin-core")
+            implementation("io.insert-koin:koin-android")
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
@@ -42,14 +45,27 @@ kotlin {
             api(libs.moe.precompose)
             api(libs.moe.precompose.molecule)
             api(libs.moe.precompose.viewmodel)
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation("io.insert-koin:koin-core")
+            implementation("io.insert-koin:koin-compose")
             api(libs.moe.precompose.koin)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            implementation(libs.coil3)
+            implementation(libs.coil3.network.ktor)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.serialization)
+            implementation(libs.ktor.content.negotiation)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
