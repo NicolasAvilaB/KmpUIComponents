@@ -1,4 +1,4 @@
-package kmp.ui.components.text
+package com.kmp.ui.components.text
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -9,20 +9,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.TextUnit
 
 @Composable
-actual fun KmpText14(
-    modifier: Modifier,
-    color: Color,
-    fontWeight: FontWeight,
-    letterSpacing: TextUnit,
-    lineHeight: TextUnit,
-    textAlign: TextAlign?,
-    textDecoration: TextDecoration,
+expect fun KmpText14(
+    modifier: Modifier = Modifier,
     text: String
-) {
-    /*UIKitViewController(
-        modifier = modifier,
-        factory = {
-
-        }
-    )*/
-}
+)

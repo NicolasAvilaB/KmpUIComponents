@@ -12,12 +12,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.kmp.ui.components.text.KmpText14
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ListElementsScreen(){
+internal fun ListElementsScreen() {
     Scaffold(
-        modifier = Modifier.fillMaxSize(),
         topBar = {
             TopAppBar(
                 title = {
@@ -33,9 +33,22 @@ fun ListElementsScreen(){
         containerColor = Color.White,
     ) { paddingValues ->
         Column(
-            modifier = Modifier.padding(paddingValues)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
         ) {
-            Text("sufhew")
+            KmpText14(
+                text = "Hola Mundo"
+            )
+            KmpText14(
+                text = "Hola Mundo"
+            )
+            KmpText14(
+                text = "Hola Mundo"
+            )
+            KmpText14(
+                text = "Hola Mundo"
+            )
         }
     }
 }

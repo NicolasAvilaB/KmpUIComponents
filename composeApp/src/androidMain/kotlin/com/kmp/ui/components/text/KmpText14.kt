@@ -1,4 +1,4 @@
-package kmp.ui.components.text
+package com.kmp.ui.components.text
 
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -15,24 +15,11 @@ import androidx.compose.ui.unit.sp
 @Composable
 actual fun KmpText14(
     modifier: Modifier,
-    color: Color,
-    fontWeight: FontWeight,
-    letterSpacing: TextUnit,
-    lineHeight: TextUnit,
-    textAlign: TextAlign?,
-    textDecoration: TextDecoration,
     text: String
 ) {
     Text(
+        modifier = modifier,
         text = text,
-        fontSize = 14.sp,
-        textAlign = textAlign,
-        fontWeight = fontWeight,
-        letterSpacing = letterSpacing,
-        lineHeight = lineHeight,
-        textDecoration = textDecoration,
-        color = color,
-        modifier = modifier
     )
 }
 
@@ -41,6 +28,7 @@ actual fun KmpText14(
 fun PreviewKmpUiText14Light() {
     Surface {
         KmpText14(
+            modifier = Modifier,
             text = "Hello World"
         )
     }

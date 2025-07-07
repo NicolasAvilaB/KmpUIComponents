@@ -1,5 +1,3 @@
-include(":shared")
-rootProject.name = "KmpUIComponents"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
@@ -30,5 +28,3 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":shared:androidmain")
-include(":shared:iosmain")

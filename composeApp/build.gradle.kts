@@ -54,8 +54,6 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
 
-            implementation(project(":shared"))
-
             implementation(libs.coil3)
             implementation(libs.coil3.network.ktor)
             implementation(libs.ktor.client.core)
